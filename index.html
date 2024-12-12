@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facts App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .fact-display {
+            margin: 20px 0;
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            color: #fff;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Random Space Facts</h1>
+        <div id="fact-display" class="fact-display">
+            Click the button to see a fact!
+        </div>
+        <button id="new-fact-button">Get a New Fact</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const eefacts = {
+                "spaceFacts": [
+                    {
+                        "id": 1,
+                        "fact": "One day on Venus is longer than one year on Venus. Venus takes 243 Earth days to rotate on its axis but only 225 Earth days to orbit the Sun.",
+                        "category": "Planetary"
+                    },
+                    {
+                        "id": 2,
+                        "fact": "The Sun makes up 99.86% of the mass of our solar system.",
+                        "category": "Solar"
+                    },
+                    {
+                        "id": 3,
+                        "fact": "The biggest known star, UY Scuti, is so large that it would take 1,700 years to walk around it at normal walking speed.",
+                        "category": "Stars"
+                    },
+                    {
+                        "id": 4,
+                        "fact": "There's a planet made of diamonds twice the size of Earth, called 55 Cancri e.",
+                        "category": "Exoplanets"
+                    },
+                    {
+                        "id": 5,
+                        "fact": "The footprints left by Apollo astronauts on the Moon will likely stay there for at least 100 million years.",
+                        "category": "Space Exploration"
+                    },
+                    {
+                        "id": 6,
+                        "fact": "The average galaxy contains between 100-400 billion stars.",
+                        "category": "Galaxies"
+                    },
+                    {
+                        "id": 7,
+                        "fact": "The space between galaxies is not empty but filled with an extremely thin gas.",
+                        "category": "Cosmic Structure"
+                    },
+                    {
+                        "id": 8,
+                        "fact": "There are more stars in the universe than grains of sand on all of Earth's beaches.",
+                        "category": "Universe"
+                    },
+                    {
+                        "id": 9,
+                        "fact": "Saturn's moon Titan has liquid methane lakes and seas on its surface.",
+                        "category": "Moons"
+                    },
+                    {
+                        "id": 10,
+                        "fact": "Light from the Sun takes about 8 minutes and 20 seconds to reach Earth.",
+                        "category": "Physics"
+                    },
+                    {
+                        "id": 11,
+                        "fact": "The International Space Station travels at a speed of about 17,500 mph.",
+                        "category": "Space Technology"
+                    },
+                    {
+                        "id": 12,
+                        "fact": "A day on Mars is about 24 hours and 37 minutes long.",
+                        "category": "Planetary"
+                    },
+                    {
+                        "id": 13,
+                        "fact": "Black holes emit radiation, known as Hawking radiation.",
+                        "category": "Astrophysics"
+                    },
+                    {
+                        "id": 14,
+                        "fact": "The largest known black hole could fit 66 billion Suns inside it.",
+                        "category": "Black Holes"
+                    },
+                    {
+                        "id": 15,
+                        "fact": "There are more trees on Earth than stars in the Milky Way galaxy.",
+                        "category": "Comparisons"
+                    },
+                    {
+                        "id": 16,
+                        "fact": "The asteroid belt between Mars and Jupiter contains over 200 known asteroids larger than 100km.",
+                        "category": "Solar System"
+                    },
+                    {
+                        "id": 17,
+                        "fact": "Astronauts grow slightly taller (about 2 inches) when in space.",
+                        "category": "Human Spaceflight"
+                    },
+                    {
+                        "id": 18,
+                        "fact": "The most distant object visible to the naked eye is the Andromeda Galaxy, 2.5 million light-years away.",
+                        "category": "Astronomy"
+                    },
+                    {
+                        "id": 19,
+                        "fact": "Jupiter's Great Red Spot is shrinking, but it's still larger than Earth.",
+                        "category": "Planetary Features"
+                    },
+                    {
+                        "id": 20,
+                        "fact": "There are more possible iterations in a game of chess than there are atoms in the observable universe.",
+                        "category": "Space Perspective"
+                    }
+                ]
+            };
+
+            const factDisplay = document.getElementById('fact-display');
+            const newFactButton = document.getElementById('new-fact-button');
+
+            newFactButton.addEventListener('click', () => {
+                const randomIndex = Math.floor(Math.random() * eefacts.spaceFacts.length);
+                factDisplay.textContent = eefacts.spaceFacts[randomIndex].fact;
+            });
+        });
+    </script>
+</body>
+</html>
